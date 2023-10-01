@@ -3,13 +3,13 @@ kind: Service
 metadata: 
   name: python-app
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector: 
     app: python
   ports:
   - name:
     protocol: TCP      
-    port: 8080
+    port: 5000
     targetPort: 5000
     nodePort: 30001
 
