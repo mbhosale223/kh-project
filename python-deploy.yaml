@@ -16,7 +16,7 @@ spec:
     spec: 
       containers: 
       - name: python-container
-        image: iamsauravsingh/python-project
+        image: {{registry}}:v{{BUILD_NUMBER}}
         ports: 
         - containerPort: 5000
           name: app-port
