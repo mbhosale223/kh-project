@@ -15,7 +15,7 @@ spec:
         app: python
     spec: 
       containers: 
-      - name: python-container
+      - name: python-container-app
         image: {{registry}}:v{{BUILD_NUMBER}}
         ports: 
         - containerPort: 5000
