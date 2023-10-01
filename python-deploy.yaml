@@ -16,7 +16,7 @@ spec:
     spec: 
       containers: 
       - name: python-container-app
-        image: {{registry}}:v{{BUILD_NUMBER}}
+        image: iamsauravsingh/python-app:latest
         ports: 
         - containerPort: 5000
           name: app-port
