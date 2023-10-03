@@ -37,7 +37,7 @@ pipeline {
         stage('Deploying container to Kubernetes') {
             agent {label 'control-plane'}
                 steps {
-                     sh "kubectl apply -f python-deploy.yaml -f python-svc.yaml"
+                     sh "helm install project-1 python-project --set appimage=${registry}:v${BUILD_NUMBER}"
             }
         }      
     }
