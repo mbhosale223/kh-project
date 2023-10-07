@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const client = require('prom-client')
-const port = 3000
+const port = 5000
 
 const register = new client.Registry();
 
@@ -63,6 +63,11 @@ function andRestrictTo(role) {
 app.use(function(req, res, next){
     req.authenticatedUser = users[0];
     next();
+});
+
+app.post("/post", (req, res) => { 
+  console.log("Connected to React"); 
+  res.redirect("/"); 
 });
 
 app.get('/', function(req, res){
