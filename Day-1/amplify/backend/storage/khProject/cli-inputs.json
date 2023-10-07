@@ -1,0 +1,14 @@
+{
+  "resourceName": "khProject",
+  "policyUUID": "baa90846",
+  "bucketName": "khproject123",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "S3Trigger23659b7a",
+  "groupAccess": {}
+}
