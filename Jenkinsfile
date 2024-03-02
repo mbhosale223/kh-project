@@ -37,7 +37,7 @@ pipeline {
         stage('Deploying container to Kubernetes') {
            steps {
                script {
-                    serviceExists = sh(script: 'kubectl get services python-app -n default | grep python-app | awk '{ print \$1}'', returnStdout: true).trim()
+                    serviceExists = sh(script: 'kubectl get services python-app -n default | grep python-app | awk '{ print $1}'', returnStdout: true).trim()
                     echo $serviceExists 
                     if (serviceExists == "python-app" ) {
                          sh "echo 'Upgrading...'"
