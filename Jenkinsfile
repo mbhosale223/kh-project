@@ -37,8 +37,8 @@ pipeline {
         stage('Deploying container to Kubernetes') {
            steps {
                script {
-                 sh "serviceExists=`kubectl get services python-app -n default | grep python-app | awk '{ print \$1}'`"
-                    if (serviceExists) {
+                   def serviceExists = sh "kubectl get services python-app -n default | grep python-app | awk '{ print \$1}'"
+                    if (serviceExists == 'python-app' ) {
                         sh "helm upgrade project-1 python-project --set appimage=${registry}:v${BUILD_NUMBER}"
                     } else {
                         sh "helm install project-1 python-project --set appimage=${registry}:v${BUILD_NUMBER}"
