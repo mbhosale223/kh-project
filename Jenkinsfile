@@ -39,7 +39,7 @@ pipeline {
                script {
                     def serviceExists = ""
                    serviceExists = sh(script: "kubectl get services python-app -n default | grep python-app | awk '{ print \$1}'", returnStdout: true).trim()
-                    echo $serviceExists 
+                    echo serviceExists 
                     if (serviceExists == "python-app" ) {
                          sh "echo 'Upgrading...'"
                         sh "helm upgrade project-1 python-project --set appimage=${registry}:v${BUILD_NUMBER}"
