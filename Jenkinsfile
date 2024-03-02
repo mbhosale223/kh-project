@@ -37,7 +37,7 @@ pipeline {
         stage('Deploying container to Kubernetes') {
            steps {
                def serviceExists = sh(
-                   script: "kubectl get service python-app -n default,
+                   script: "kubectl get service python-app -n default",
                    returnStatus: true
                    ) == 0
                if (serviceExists) {
